@@ -1,28 +1,20 @@
 package tn.esprit.spring.services;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-
 
 import tn.esprit.spring.entities.Employe;
-
-
-
 import tn.esprit.spring.repository.EmployeRepository;
-
 
 @Service
 public class EmployeServiceImpl implements IEmployeService {
-
+	
 	@Autowired
 	EmployeRepository employeRepository;
-	@Autowired
+	/*@Autowired*/
 	/*DepartementRepository deptRepoistory;
 	@Autowired
 	ContratRepository contratRepoistory;
@@ -127,17 +119,17 @@ public class EmployeServiceImpl implements IEmployeService {
 		employeRepository.mettreAjourEmailByEmployeIdJPQL(email, employeId);
 
 	}
-	public void deleteAllContratJPQL() {
+	/*public void deleteAllContratJPQL() {
          employeRepository.deleteAllContratJPQL();
-	}
+	}*/
 	
-	public float getSalaireByEmployeIdJPQL(int employeId) {
+	/*public float getSalaireByEmployeIdJPQL(int employeId) {
 		return employeRepository.getSalaireByEmployeIdJPQL(employeId);
-	}
+	}*/
 
-	public Double getSalaireMoyenByDepartementId(int departementId) {
+	/*public Double getSalaireMoyenByDepartementId(int departementId) {
 		return employeRepository.getSalaireMoyenByDepartementId(departementId);
-	}
+	}*/
 	
 	/*public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
 			Date dateFin) {
@@ -177,5 +169,24 @@ public class EmployeServiceImpl implements IEmployeService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void deleteAllContratJPQL() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Double getSalaireMoyenByDepartementId(int departementId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public float getSalaireByEmployeIdJPQL(int employeId) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 
 }

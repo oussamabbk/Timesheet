@@ -34,21 +34,21 @@ public interface EmployeRepository extends CrudRepository<Employe, Integer>  {
     public void mettreAjourEmailByEmployeIdJPQL(@Param("email1")String email, @Param("employeId")int employeId);
 
     
-    @Modifying
+   /* @Modifying
     @Transactional
     @Query("DELETE from Contrat")
-    public void deleteAllContratJPQL();
+    public void deleteAllContratJPQL();*/
     
-    @Query("select c.salaire from Contrat c join c.employe e where e.id=:employeId")
-    public float getSalaireByEmployeIdJPQL(@Param("employeId")int employeId);
+   /* @Query("select c.salaire from Contrat c join c.employe e where e.id=:employeId")
+    public float getSalaireByEmployeIdJPQL(@Param("employeId")int employeId);*/
     
     
-    @Query("Select "
+    /*@Query("Select "
 			+ "DISTINCT AVG(cont.salaire) from Contrat cont "
 			+ "join cont.employe emp "
 			+ "join emp.departements deps "
 			+ "where deps.id=:depId")
-    public Double getSalaireMoyenByDepartementId(@Param("depId")int departementId);
+    public Double getSalaireMoyenByDepartementId(@Param("depId")int departementId);*/
 	
     		
    
