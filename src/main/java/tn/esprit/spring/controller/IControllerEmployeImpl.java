@@ -1,15 +1,19 @@
 package tn.esprit.spring.controller;
 
-import java.util.Date;
+
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-
+import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
-
+import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.services.IEmployeService;
+import tn.esprit.spring.services.IEntrepriseService;
+import tn.esprit.spring.services.ITimesheetService;
 
 
 
@@ -17,10 +21,10 @@ import tn.esprit.spring.services.IEmployeService;
 public class IControllerEmployeImpl  {
 	@Autowired
 	IEmployeService iemployeservice;
-	/*@Autowired
+	@Autowired
 	IEntrepriseService ientrepriseservice;
 	@Autowired
-	ITimesheetService itimesheetservice;*/
+	ITimesheetService itimesheetservice;
 
 	public int ajouterEmploye(Employe employe)
 	{
@@ -46,10 +50,10 @@ public class IControllerEmployeImpl  {
 	}
 
 	
-	/*public int ajouterContrat(Contrat contrat) {
+	public int ajouterContrat(Contrat contrat) {
 		iemployeservice.ajouterContrat(contrat);
 		return contrat.getReference();
-	}*/
+	}
 	
 	public void affecterContratAEmploye(int contratId, int employeId)
 	{
@@ -83,9 +87,9 @@ public class IControllerEmployeImpl  {
 	}
 
 	
-	/*public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
+	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
 		return iemployeservice.getAllEmployeByEntreprise(entreprise);
-	}*/
+	}
 
 
 	public void mettreAjourEmailByEmployeIdJPQL(String email, int employeId) {	
@@ -101,25 +105,15 @@ public class IControllerEmployeImpl  {
 
 	
 	public float getSalaireByEmployeIdJPQL(int employeId) {
-		// TODO Auto-generated method stub
+		
 		return iemployeservice.getSalaireByEmployeIdJPQL(employeId);
 	}
 
 
 	public Double getSalaireMoyenByDepartementId(int departementId) {
-		// TODO Auto-generated method stub
+		
 		return iemployeservice.getSalaireMoyenByDepartementId(departementId);
 	}
-
-	
-	
-	/*public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
-			Date dateFin) {
-		return iemployeservice.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
-	}*/
-
-
-
 
 	public List<Employe> getAllEmployes() {
 		
