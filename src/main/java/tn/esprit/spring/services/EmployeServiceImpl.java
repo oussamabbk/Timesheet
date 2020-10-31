@@ -8,28 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import tn.esprit.spring.entities.Contrat;
-import tn.esprit.spring.entities.Departement;
+
 import tn.esprit.spring.entities.Employe;
-import tn.esprit.spring.entities.Entreprise;
-import tn.esprit.spring.entities.Mission;
-import tn.esprit.spring.entities.Timesheet;
-import tn.esprit.spring.repository.ContratRepository;
-import tn.esprit.spring.repository.DepartementRepository;
+
 import tn.esprit.spring.repository.EmployeRepository;
-import tn.esprit.spring.repository.TimesheetRepository;
+
 
 @Service
 public class EmployeServiceImpl implements IEmployeService {
 
 	@Autowired
 	EmployeRepository employeRepository;
-	@Autowired
+	/*@Autowired
 	DepartementRepository deptRepoistory;
 	@Autowired
 	ContratRepository contratRepoistory;
 	@Autowired
-	TimesheetRepository timesheetRepository;
+	TimesheetRepository timesheetRepository;*/
 
 	public int ajouterEmploye(Employe employe) {
 		employeRepository.save(employe);
@@ -44,7 +39,7 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	}
 
-	@Transactional	
+	/*@Transactional	
 	public void affecterEmployeADepartement(int employeId, int depId) {
 		Departement ddep =  new Departement("");
 		Departement depManagedEntity = deptRepoistory.findById(depId).orElse(ddep);
@@ -62,8 +57,8 @@ public class EmployeServiceImpl implements IEmployeService {
 
 		}
 
-	}
-	@Transactional
+	}*/
+	/*@Transactional
 	public void desaffecterEmployeDuDepartement(int employeId, int depId)
 	{
 		if(deptRepoistory.findById(depId).isPresent()) {
@@ -81,14 +76,14 @@ public class EmployeServiceImpl implements IEmployeService {
 		
 
 		
-	}
+	}*/
 
-	public int ajouterContrat(Contrat contrat) {
+	/*public int ajouterContrat(Contrat contrat) {
 		contratRepoistory.save(contrat);
 		return contrat.getReference();
 	}
-
-	public void affecterContratAEmploye(int contratId, int employeId) {
+*/
+	/*public void affecterContratAEmploye(int contratId, int employeId) {
 		Contrat c = new Contrat(null, null, 0);
 		Contrat contratManagedEntity = contratRepoistory.findById(contratId).orElse(c);
 		Employe e = new Employe("", "", "", true, null);
@@ -97,14 +92,14 @@ public class EmployeServiceImpl implements IEmployeService {
 		contratManagedEntity.setEmploye(employeManagedEntity);
 		contratRepoistory.save(contratManagedEntity);
 		
-	}
+	}*/
 
 	public String getEmployePrenomById(int employeId) {
 		Employe e = new Employe("", "", "", true, null);
 		Employe employeManagedEntity = employeRepository.findById(employeId).orElse(e);
 		return employeManagedEntity.getPrenom();
 	}
-	public void deleteEmployeById(int employeId)
+	/*public void deleteEmployeById(int employeId)
 	{
 		Employe e = new Employe("", "", "", true, null);
 		Employe employe = employeRepository.findById(employeId).orElse(e);
@@ -117,14 +112,14 @@ public class EmployeServiceImpl implements IEmployeService {
 		}
 
 		employeRepository.delete(employe);
-	}
+	}*/
 
-	public void deleteContratById(int contratId) {
+	/*public void deleteContratById(int contratId) {
 		Contrat c = new Contrat(null, null, 0);
 		Contrat contratManagedEntity = contratRepoistory.findById(contratId).orElse(c);
 		contratRepoistory.delete(contratManagedEntity);
 
-	}
+	}*/
 
 	public int getNombreEmployeJPQL() {
 		return employeRepository.countemp();
@@ -135,33 +130,75 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	}
 	
-	public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
+	/*public List<Employe> getAllEmployeByEntreprise(Entreprise entreprise) {
 		return employeRepository.getAllEmployeByEntreprisec(entreprise);
-	}
+	}*/
 
 	public void mettreAjourEmailByEmployeIdJPQL(String email, int employeId) {
 		employeRepository.mettreAjourEmailByEmployeIdJPQL(email, employeId);
 
 	}
 	public void deleteAllContratJPQL() {
-         employeRepository.deleteAllContratJPQL();
+         //employeRepository.deleteAllContratJPQL();
 	}
 	
-	public float getSalaireByEmployeIdJPQL(int employeId) {
+	/*public float getSalaireByEmployeIdJPQL(int employeId) {
 		return employeRepository.getSalaireByEmployeIdJPQL(employeId);
-	}
+	}*/
 
-	public Double getSalaireMoyenByDepartementId(int departementId) {
+	/*public Double getSalaireMoyenByDepartementId(int departementId) {
 		return employeRepository.getSalaireMoyenByDepartementId(departementId);
-	}
+	}*/
 	
-	public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
+	/*public List<Timesheet> getTimesheetsByMissionAndDate(Employe employe, Mission mission, Date dateDebut,
 			Date dateFin) {
 		return timesheetRepository.getTimesheetsByMissionAndDate(employe, mission, dateDebut, dateFin);
-	}
+	}*/
 
 	public List<Employe> getAllEmployes() {
 				return (List<Employe>) employeRepository.findAll();
+	}
+
+	@Override
+	public void affecterEmployeADepartement(int employeId, int depId) {
+		
+		
+	}
+
+	@Override
+	public void desaffecterEmployeDuDepartement(int employeId, int depId) {
+		
+		
+	}
+
+	@Override
+	public void affecterContratAEmploye(int contratId, int employeId) {
+		
+		
+	}
+
+	@Override
+	public void deleteEmployeById(int employeId) {
+		
+		
+	}
+
+	@Override
+	public void deleteContratById(int contratId) {
+		
+		
+	}
+
+	@Override
+	public float getSalaireByEmployeIdJPQL(int employeId) {
+		
+		return 0;
+	}
+
+	@Override
+	public Double getSalaireMoyenByDepartementId(int departementId) {
+		
+		return null;
 	}
 
 }
