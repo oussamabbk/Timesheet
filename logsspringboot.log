@@ -901,3 +901,20 @@ Caused by: org.hibernate.hql.internal.ast.QuerySyntaxException: Contrat is not m
 2020-10-31 22:19:18.841  INFO 13588 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-10-31 22:19:18.843  INFO 13588 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2020-10-31 22:19:18.846  INFO 13588 --- [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-10-31 23:33:10.367  INFO 17852 --- [main] SpringBootCoreDataJpaMvcRest1Application : Starting TimesheetSpringBootCoreDataJpaMvcRest1Application on DESKTOP-7FEHVCN with PID 17852 (C:\Utilisateur\Oussama\Documents\workspace-sts-3.8.4.RELEASE\Timesheet\target\classes started by admin in C:\Utilisateur\Oussama\Documents\workspace-sts-3.8.4.RELEASE\Timesheet)
+2020-10-31 23:33:10.378  INFO 17852 --- [main] SpringBootCoreDataJpaMvcRest1Application : No active profile set, falling back to default profiles: default
+2020-10-31 23:33:12.729  INFO 17852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-10-31 23:33:13.094  INFO 17852 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 340ms. Found 1 repository interfaces.
+2020-10-31 23:33:14.354  INFO 17852 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3733a068] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-31 23:33:15.514  INFO 17852 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8087 (http)
+2020-10-31 23:33:15.575  INFO 17852 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-10-31 23:33:15.579  INFO 17852 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-10-31 23:33:16.157  INFO 17852 --- [main] o.a.c.c.C.[.[localhost].[/SpringMVC]     : Initializing Spring embedded WebApplicationContext
+2020-10-31 23:33:16.158  INFO 17852 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5599 ms
+2020-10-31 23:33:16.950  INFO 17852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-31 23:33:17.620  INFO 17852 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-31 23:33:18.191  INFO 17852 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2020-10-31 23:33:18.591  INFO 17852 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.9.Final}
+2020-10-31 23:33:18.605  INFO 17852 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
