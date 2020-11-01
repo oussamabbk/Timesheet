@@ -59,6 +59,11 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	public void deleteEntrepriseById(int entrepriseId) {
 		entrepriseRepoistory.delete(entrepriseRepoistory.findById(entrepriseId).get());	
 	}
+	
+	@Transactional
+	public void deleteAll() {
+		entrepriseRepoistory.deleteAll();	
+	}
 
 //	@Transactional
 //	public void deleteDepartementById(int depId) {
@@ -68,6 +73,10 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 
 	public Entreprise getEntrepriseById(int entrepriseId) {
 		return entrepriseRepoistory.findById(entrepriseId).get();	
+	}
+	
+	public List<Entreprise> getAll() {
+		return (List<Entreprise>) entrepriseRepoistory.findAll();	
 	}
 
 }
