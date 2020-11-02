@@ -130,7 +130,7 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 
 	public void deleteAllContratJPQL() {
-		// employeRepository.deleteAllContratJPQL();
+		 employeRepository.deleteAllContratJPQL();
 	}
 
 	/*
