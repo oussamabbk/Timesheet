@@ -1,16 +1,13 @@
 package tn.esprit.spring.services;
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-
+import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
-
+import tn.esprit.spring.repository.ContratRepository;
 import tn.esprit.spring.repository.EmployeRepository;
 
 
@@ -19,11 +16,11 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	@Autowired
 	EmployeRepository employeRepository;
-	/*@Autowired
-	DepartementRepository deptRepoistory;
 	@Autowired
 	ContratRepository contratRepoistory;
-	@Autowired
+	/*@Autowired
+	DepartementRepository deptRepoistory;
+		@Autowired
 	TimesheetRepository timesheetRepository;*/
 
 	public int ajouterEmploye(Employe employe) {
@@ -78,11 +75,11 @@ public class EmployeServiceImpl implements IEmployeService {
 		
 	}*/
 
-	/*public int ajouterContrat(Contrat contrat) {
+	public int ajouterContrat(Contrat contrat) {
 		contratRepoistory.save(contrat);
 		return contrat.getReference();
 	}
-*/
+
 	/*public void affecterContratAEmploye(int contratId, int employeId) {
 		Contrat c = new Contrat(null, null, 0);
 		Contrat contratManagedEntity = contratRepoistory.findById(contratId).orElse(c);
