@@ -103,14 +103,12 @@ public class EmployeServiceImpl implements IEmployeService {
 	 * employeRepository.delete(employe); }
 	 */
 
-	/*
-	 * public void deleteContratById(int contratId) { Contrat c = new
-	 * Contrat(null, null, 0); Contrat contratManagedEntity =
-	 * contratRepoistory.findById(contratId).orElse(c);
-	 * contratRepoistory.delete(contratManagedEntity);
-	 * 
-	 * }
-	 */
+	public void deleteContratById(int contratId) {
+		Contrat c = new Contrat(null, null, 0);
+		Contrat contratManagedEntity = contratRepoistory.findById(contratId).orElse(c);
+		contratRepoistory.delete(contratManagedEntity);
+
+	}
 
 	public int getNombreEmployeJPQL() {
 		return employeRepository.countemp();
@@ -168,11 +166,6 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	@Override
 	public void deleteEmployeById(int employeId) {
-
-	}
-
-	@Override
-	public void deleteContratById(int contratId) {
 
 	}
 
