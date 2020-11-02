@@ -3,6 +3,7 @@ package tn.esprit.spring.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,15 +17,44 @@ import tn.esprit.spring.repository.EntrepriseRepository;
 @Service
 public class EntrepriseServiceImpl implements IEntrepriseService {
 
+	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
+	
+
 	@Autowired
     EntrepriseRepository entrepriseRepoistory;
 	//@Autowired
 	//DepartementRepository deptRepoistory;
 	
 	public int ajouterEntreprise(Entreprise entreprise) {
-		entrepriseRepoistory.save(entreprise);
+		
+		try {
+			entrepriseRepoistory.save(entreprise);
+			l.info("entreprise ajoutée:  "+ entreprise);
+
+			l.debug("Je vais lancer la divsion.");
+
+			}
+			catch (Exception e) { l.error("Erreur dans ajouterEntreprise() : " + e); 
+			}
+		
 		return entreprise.getId();
 	}
+	
+	
+	public Entreprise ajouterEntreprise2(Entreprise entreprise) {
+		
+		try {
+		l.info("Dans la  methode ajouterEntreprise()");
+		l.debug("Je vais lancer l'ajout d'une nouvelle entreprise .");
+		entrepriseRepoistory.save(entreprise);
+		l.debug("Je viens de finir l'ajout .");
+		l.info("Out ajouterEntreprise() without errors avec.");
+		}
+		catch (Exception e) 
+		{ 
+		l.error("Erreur dans ajouterEntreprise() : " + e); }
+		l.info("fin methode ajouterEntreprise() .");
+		return entreprise;}
 
 //	public int ajouterDepartement(Departement dep) {
 //		deptRepoistory.save(dep);
