@@ -9,11 +9,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-@Entity
-public
+//import javax.persistence.OneToMany;
 
- class Departement implements Serializable {
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
+@Entity
+public class Departement implements Serializable {
 
 	private static final long serialVersionUID = -357738161698377833L;
 
@@ -28,7 +30,8 @@ public
 	@ManyToMany
 	private List<Employe> employes;
 	
-	
+	//@OneToMany(mappedBy="departement")
+	//private List<Mission> missions;
 	
 	@ManyToOne
 	private Entreprise entreprise;
@@ -65,7 +68,13 @@ public
 		this.employes = employes;
 	}
 
-	
+	//public List<Mission> getMissions() {
+	//	return missions;
+	//}
+
+	//public void setMissions(List<Mission> missions) {
+	//	this.missions = missions;
+	//}
 
 	public Entreprise getEntreprise() {
 		return entreprise;
