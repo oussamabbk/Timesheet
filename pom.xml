@@ -11,13 +11,13 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tn.esprit.spring</groupId>
-	<artifactId>Timesheet</artifactId>
+	<artifactId>Timesheet-IC-dev-team</artifactId>
 	<version>1.0</version>
 	
 	<packaging>jar</packaging>
 
-	<name>Timesheet</name>
-	<description>Timesheet</description>
+	<name>Timesheet-IC-dev-team</name>
+	<description>Timesheet-IC-dev-team</description>
 
 	<properties>
 		<java.version>1.8</java.version>
