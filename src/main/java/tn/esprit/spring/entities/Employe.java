@@ -1,53 +1,56 @@
 package tn.esprit.spring.entities;
 
 import java.io.Serializable;
-import java.util.List;
-
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-
 @Entity
 public class Employe implements Serializable {
-	
+
 	private static final long serialVersionUID = -1396669830860400871L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	private String prenom;
-	
+
 	private String nom;
-	
-	//@Column(unique=true)
+
+	// @Column(unique=true)
 	private String email;
 
 	private boolean isActif;
-	
-	@Enumerated(EnumType.STRING)
-	//@NotNull
-	private Role role;
-	
 
-	
+	@Enumerated(EnumType.STRING)
+	// @NotNull
+	private Role role;
+
+	@JsonIgnore
+	// @JsonBackReference
+	@OneToOne(mappedBy = "employe")
+	private Contrat contrat;
+
+	public Contrat getContrat() {
+		return contrat;
+	}
+
+	public void setContrat(Contrat contrat) {
+		this.contrat = contrat;
+	}
+
 	public Employe() {
 		super();
 	}
-	
+
 	public Employe(String nom, String prenom, String email, boolean isActif, Role role) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -55,7 +58,7 @@ public class Employe implements Serializable {
 		this.isActif = isActif;
 		this.role = role;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -104,8 +107,4 @@ public class Employe implements Serializable {
 		this.role = role;
 	}
 
-	
-	
-	
-	
 }
