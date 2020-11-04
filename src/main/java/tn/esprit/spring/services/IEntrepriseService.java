@@ -3,11 +3,7 @@ package tn.esprit.spring.services;
 
 
 
-
-public interface ITimesheetService {
+public interface IEntrepriseService {
 	
 	
-	
-	
-
 }
