@@ -47,17 +47,17 @@ public class EntrepriseServiceImplTest {
 //
 //	 	
 //	
-	@Test
-
-	 public void getEntrepriseById() throws ParseException {
-		try{
-	    Entreprise entrepriseretrieved=ES.getEntrepriseById(14);
-	    assertThat(14, is(entrepriseretrieved.getId()));
-		}catch(Exception e){
-			
-			l.info("entreprise id 14 not found");
-		}
-		}
+//	@Test
+//
+//	 public void getEntrepriseById() throws ParseException {
+//		try{
+//	    Entreprise entrepriseretrieved=ES.getEntrepriseById(14);
+//	    //assertThat(14, is(entrepriseretrieved.getId()));
+//		}catch(Exception e){
+//			
+//			l.info("entreprise id 14 not found");
+//		}
+//		}
 		//Entreprise entrepriseretrieved= ES.getEntrepriseById(14);
 		
 //	@Test
