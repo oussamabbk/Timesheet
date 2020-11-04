@@ -1,3 +1,4 @@
+package tn.esprit.spring;
 import org.apache.log4j.Logger;
 	
 public class AffichageLogHela {
@@ -12,8 +13,8 @@ public class AffichageLogHela {
 		l.info("In getAllEntreprises() : ");
 
 		l.debug("Je vais lancer la divsion.");
-		int i = 1/0;
-		l.debug("Je viens de lancer la divsion. " + i);
+		//int i = 1/1;
+		l.debug("Je viens de lancer la divsion. " );
 		l.debug("Je viens de finir l'opération X.");
 		l.info("Out getAllEntreprises() without errors.");
 		}

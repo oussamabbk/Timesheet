@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 //import tn.esprit.spring.entities.Departement;
-import tn.esprit.spring.entities.Employe;
+
 import tn.esprit.spring.entities.Entreprise;
 //import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.repository.EntrepriseRepository;
@@ -41,6 +41,7 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 	
 	
+	
 	public Entreprise ajouterEntreprise2(Entreprise entreprise) {
 		
 		try {
@@ -54,12 +55,9 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		{ 
 		l.error("Erreur dans ajouterEntreprise() : " + e); }
 		l.info("fin methode ajouterEntreprise() .");
-		return entreprise;}
+		return entreprise;
+		}
 
-//	public int ajouterDepartement(Departement dep) {
-//		deptRepoistory.save(dep);
-//		return dep.getId();
-//	}
 	
 //	public void affecterDepartementAEntreprise(int depId, int entrepriseId) {
 //		//Le bout Master de cette relation N:1 est departement  
@@ -87,22 +85,43 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 
 	@Transactional
 	public void deleteEntrepriseById(int entrepriseId) {
-		entrepriseRepoistory.delete(entrepriseRepoistory.findById(entrepriseId).get());	
+		try {
+			l.info("Dans la  methode deleteEntrepriseById()");
+			l.debug("Je vais lancer la suppression d'une entreprise .");
+			Entreprise ent = new Entreprise(null, null);
+			entrepriseRepoistory.delete(entrepriseRepoistory.findById(entrepriseId).orElse(ent));
+			l.debug("Je viens de finir la supp .");
+			l.info("Out deleteEntrepriseById() without errors avec.");
+			}
+			catch (Exception e) 
+			{ 
+			l.error("Erreur dans deleteEntrepriseById() : " + e); }
+			l.info("fin methode deleteEntrepriseById() .");
+			
 	}
 	
 	@Transactional
 	public void deleteAll() {
-		entrepriseRepoistory.deleteAll();	
+		try {
+			l.info("Dans la  methode deleteAll()");
+			l.debug("Je vais lancer la suppression de toutes les entreprises .");
+			entrepriseRepoistory.deleteAll();
+			l.debug("Je viens de finir la supp .");
+			l.info("Out deleteAll() without errors avec.");
+			}
+			catch (Exception e) 
+			{ 
+			l.error("Erreur dans deleteAll() : " + e); }
+			l.info("fin methode deleteAll() .");
+			
 	}
 
-//	@Transactional
-//	public void deleteDepartementById(int depId) {
-//		deptRepoistory.delete(deptRepoistory.findById(depId).get());	
-//	}
+
 
 
 	public Entreprise getEntrepriseById(int entrepriseId) {
-		return entrepriseRepoistory.findById(entrepriseId).get();	
+		Entreprise ent = new Entreprise(null, null);
+		return entrepriseRepoistory.findById(entrepriseId).orElse(ent);	
 	}
 	
 	public List<Entreprise> getAll() {

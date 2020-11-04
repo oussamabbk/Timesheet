@@ -7,6 +7,7 @@ import static org.junit.Assert.assertThat;
 import java.text.ParseException;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.services.EntrepriseServiceImpl;
 import tn.esprit.spring.services.IEntrepriseService;
 
 @RunWith(SpringRunner.class)
@@ -23,11 +25,12 @@ public class EntrepriseServiceImplTest {
 	@Autowired
 	IEntrepriseService ES;
 	
+	private static final Logger l = Logger.getLogger(EntrepriseServiceImplTest.class);
 
 	@Test
 	 public void testAjoutEntreprise() throws ParseException {
 		Entreprise entreprise=new Entreprise("test2","raisonSocial2");
-		Entreprise entrepriseAdded = ES.ajouterEntreprise2(entreprise);
+		ES.ajouterEntreprise2(entreprise);
 		//assertEquals(entreprise.getId(),entrepriseAdded);
 		}
 		
@@ -44,18 +47,19 @@ public class EntrepriseServiceImplTest {
 //
 //	 	
 //	
-//	@Test
-//
-//	 public void getEntrepriseById() throws ParseException {
-//		try{
-//	    Entreprise entrepriseretrieved=ES.getEntrepriseById(36);
-//	    //assertThat(21, is(entrepriseretrieved.getId()));
-//		}catch(Exception e){
-//			System.out.println("entreprise id 36 not found");
-//		}
-//		}
-//		//Entreprise entrepriseretrieved= ES.getEntrepriseById(14);
-//		
+	@Test
+
+	 public void getEntrepriseById() throws ParseException {
+		try{
+	    Entreprise entrepriseretrieved=ES.getEntrepriseById(14);
+	    assertThat(14, is(entrepriseretrieved.getId()));
+		}catch(Exception e){
+			
+			l.info("entreprise id 14 not found");
+		}
+		}
+		//Entreprise entrepriseretrieved= ES.getEntrepriseById(14);
+		
 //	@Test
 //	 public void testdeleteAll() throws ParseException {
 //	//	ES.deleteAll();
