@@ -35,6 +35,22 @@ public class TimesheetPK implements Serializable {
 		this.dateDebut = dateDebut;
 		this.dateFin = dateFin;
 	}
+	
+	
+	public TimesheetPK(Date dateDebut, Date dateFin) {
+		super();
+		
+		this.dateDebut = dateDebut;
+		this.dateFin = dateFin;
+	}
+	
+	public TimesheetPK(int idEmploye) {
+		super();
+		
+		this.idEmploye = idEmploye;
+		
+	}
+	
 
 	//Pour que hibernate peut comparer deux objets (par exemple : recherche de l'objet dans le persistenceContext), 
 	//Il doit pouvoir comparer les primary key des deux entites

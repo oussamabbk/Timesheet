@@ -42,6 +42,16 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	}
 
 	
+	
+	public void ajouterTimesheet2(Timesheet timesheet) {
+		
+		timesheetRepository.save(timesheet);
+		
+	}
+
+	
+	
+	
 	public void validerTimesheet(Date dateDebut, Date dateFin, int validateurId) {
 		System.out.println("In valider Timesheet");
 		
