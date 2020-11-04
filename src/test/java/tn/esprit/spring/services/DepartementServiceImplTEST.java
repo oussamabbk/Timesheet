@@ -26,19 +26,19 @@ import tn.esprit.spring.services.IDepartementService;
 	@Test
 	public void testAddDepartment() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-		Date d = dateFormat.parse("2018-03-23");
+		Date d = dateFormat.parse("2028-03-23");
 		Departement dep = new Departement("Dep Informatique");
 		Departement depAdded = depser.addDepartement(dep);
 		assertEquals(dep.getName(), depAdded.getName());
 	}
-	/*@Test
+	@Test
 	public void testModifyDepartement() throws ParseException   {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2015-03-23");
 		Departement dep = new Departement("Dep1 Informatique");
 		Departement depModified = depser.UpdateDepartement(dep);
 		assertEquals(dep.getName(), depModified.getName());
-	}*/
+	}
 
 	/*@Test
 	public void testRetrieveDepartement() {
