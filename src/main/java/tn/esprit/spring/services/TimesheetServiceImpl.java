@@ -23,6 +23,7 @@ import tn.esprit.spring.repository.TimesheetRepository;
 @Service
 public class TimesheetServiceImpl implements ITimesheetService {
 	
+<<<<<<< HEAD
 	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
 	
 	
@@ -30,6 +31,12 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	MissionRepository missionRepository;
 //	@Autowired
 //	DepartementRepository deptRepoistory;
+=======
+	
+	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
+
+
+>>>>>>> KhalilB
 	@Autowired
 	TimesheetRepository timesheetRepository;
 	@Autowired
@@ -59,17 +66,40 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		
 	}
 
+<<<<<<< HEAD
 	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
 		TimesheetPK timesheetPK = new TimesheetPK();
 		timesheetPK.setDateDebut(dateDebut);
 		timesheetPK.setDateFin(dateFin);
 		timesheetPK.setIdEmploye(employeId);
 		timesheetPK.setIdMission(missionId);
+=======
+	public void ajouterTimesheet(Date dateDebut, Date dateFin) {
+		try {
+		
+		
+		TimesheetPK timesheetPK = new TimesheetPK();
+		timesheetPK.setDateDebut(dateDebut);
+		timesheetPK.setDateFin(dateFin);
+		
+		l.info("dateDebut ajoutée:  "+ dateDebut);
+		l.info("dateFin ajoutée:  "+ dateFin);
+
+		l.debug("Je vais lancer la divsion.");
+
+	
+>>>>>>> KhalilB
 		
 		Timesheet timesheet = new Timesheet();
 		timesheet.setTimesheetPK(timesheetPK);
 		timesheet.setValide(false); //par defaut non valide
+		
 		timesheetRepository.save(timesheet);
+		l.info("Timesheet ajoutée:  "+ timesheetPK);
+		}
+		catch (Exception e) { l.error("Erreur dans ajouterTimesheet() : " + e); 
+		}
+		
 		
 	}
 
