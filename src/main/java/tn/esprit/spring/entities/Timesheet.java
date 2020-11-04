@@ -1,7 +1,6 @@
 package tn.esprit.spring.entities;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -16,19 +15,16 @@ public class Timesheet implements Serializable{
 	@EmbeddedId
 	private TimesheetPK timesheetPK;
 	
-	
 	//idMission est a la fois primary key et foreign key
-		@ManyToOne
-	    @JoinColumn(name = "idMission", referencedColumnName = "id", insertable=false, updatable=false)
-		private Mission mission;
-		
-		//idEmploye est a la fois primary key et foreign key
-		
-		@ManyToOne
-	    @JoinColumn(name = "idEmploye", referencedColumnName = "id", insertable=false, updatable=false)
-		private Employe employe;
-		
+	@ManyToOne
+    @JoinColumn(name = "idMission", referencedColumnName = "id", insertable=false, updatable=false)
+	private Mission mission;
 	
+	//idEmploye est a la fois primary key et foreign key
+	
+	@ManyToOne
+    @JoinColumn(name = "idEmploye", referencedColumnName = "id", insertable=false, updatable=false)
+	private Employe employe;
 	
 	
 	private boolean isValide;
@@ -50,9 +46,6 @@ public class Timesheet implements Serializable{
 		this.timesheetPK = timesheetPK;
 	}
 
-	
-	
-
 	public Mission getMission() {
 		return mission;
 	}
@@ -69,29 +62,6 @@ public class Timesheet implements Serializable{
 		this.employe = employe;
 	}
 
-	public Timesheet(boolean isValide,TimesheetPK timesheetPK) {
-		
-		super();
-		this.isValide = isValide;
-		this.timesheetPK = timesheetPK;
-	
-	
-	}
-	
-	
-	
-	
-	
-public Timesheet() {
-		
-		super();
-	
-	
-	
-	}
 	
 	
 }
-
-
-
