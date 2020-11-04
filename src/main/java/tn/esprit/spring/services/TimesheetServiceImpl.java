@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,8 @@ import tn.esprit.spring.repository.TimesheetRepository;
 @Service
 public class TimesheetServiceImpl implements ITimesheetService {
 	
+	
+	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
 
 
 	@Autowired
@@ -29,15 +32,30 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	
 
 	public void ajouterTimesheet(Date dateDebut, Date dateFin) {
+		try {
+		
+		
 		TimesheetPK timesheetPK = new TimesheetPK();
 		timesheetPK.setDateDebut(dateDebut);
 		timesheetPK.setDateFin(dateFin);
+		
+		l.info("dateDebut ajoutée:  "+ dateDebut);
+		l.info("dateFin ajoutée:  "+ dateFin);
+
+		l.debug("Je vais lancer la divsion.");
+
 	
 		
 		Timesheet timesheet = new Timesheet();
 		timesheet.setTimesheetPK(timesheetPK);
 		timesheet.setValide(false); //par defaut non valide
+		
 		timesheetRepository.save(timesheet);
+		l.info("Timesheet ajoutée:  "+ timesheetPK);
+		}
+		catch (Exception e) { l.error("Erreur dans ajouterTimesheet() : " + e); 
+		}
+		
 		
 	}
 
