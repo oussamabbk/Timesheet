@@ -13,6 +13,8 @@
 	<groupId>tn.esprit.spring</groupId>
 	<artifactId>Timesheet-IC-dev-team</artifactId>
 	<version>1.0</version>
+	
+	<packaging>jar</packaging>
 
 	<name>Timesheet-IC-dev-team</name>
 	<description>Timesheet-IC-dev-team</description>
@@ -57,7 +59,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
+
+		
 	</dependencies>
 
 	<build>
@@ -66,7 +76,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
 		</plugins>
 	</build>
 
