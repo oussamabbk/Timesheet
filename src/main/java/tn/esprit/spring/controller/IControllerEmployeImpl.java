@@ -50,15 +50,9 @@ public class IControllerEmployeImpl  {
 	}
 
 	
-	/*public int ajouterContrat(Contrat contrat) {
-		iemployeservice.ajouterContrat(contrat);
-		return contrat.getReference();
-	}*/
+
 	
-	public void affecterContratAEmploye(int contratId, int employeId)
-	{
-		iemployeservice.affecterContratAEmploye(contratId, employeId);
-	}
+	
 
 	
 	public String getEmployePrenomById(int employeId) {
@@ -70,9 +64,7 @@ public class IControllerEmployeImpl  {
 		iemployeservice.deleteEmployeById(employeId);
 		
 	}
-	public void deleteContratById(int contratId) {
-		iemployeservice.deleteContratById(contratId);
-	}
+	
 
 	
 	public int getNombreEmployeJPQL() {
@@ -98,10 +90,7 @@ public class IControllerEmployeImpl  {
 	}
 
 
-	public void deleteAllContratJPQL() {
-		iemployeservice.deleteAllContratJPQL();
-		
-	}
+	
 
 	
 	public float getSalaireByEmployeIdJPQL(int employeId) {
