@@ -40,11 +40,7 @@ import tn.esprit.spring.services.IDepartementService;
 		assertEquals(dep.getName(), depModified.getName());
 	}
 
-	/*@Test
-	public void testRetrieveDepartement() {
-		Departement DepartementRetrieved = depser.retreiveDepartement("1");
-		assertEquals(1L, DepartementRetrieved.getId());
-	}*/
+	
 	@Test
 	public void testRetrieveAllDepartements() {
 		List<Departement> listDepartments = depser.getAllDepartements(); 
