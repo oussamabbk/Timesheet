@@ -32,24 +32,35 @@ public class ContartServiceImpl implements IContratService {
 	}
 
 	public void affecterContratAEmploye(int contratId, int employeId) {
+		l.info("commancer l'affectation d'un contrat à un employe ");
 		Contrat c = new Contrat(null, null, 0);
+		l.info("finding contrat ");
 		Contrat contratManagedEntity = contratRepoistory.findById(contratId).orElse(c);
+		l.info("contrat trouvé ");
+		l.info("finding employe ");
 		Employe e = new Employe("", "", "", true, null);
+		l.info("employe trouvé ");
+		l.info("affectation contratemploye ");
 		Employe employeManagedEntity = employeRepository.findById(employeId).orElse(e);
 
 		contratManagedEntity.setEmploye(employeManagedEntity);
 		contratRepoistory.save(contratManagedEntity);
+		l.info("contrat affécté ");
 
 	}
 
 	public void deleteContratById(int contratId) {
 		Contrat c = new Contrat(null, null, 0);
+		l.info("in  retrieveUContrat id = " + contratId);
 		Contrat contratManagedEntity = contratRepoistory.findById(contratId).orElse(c);
 		contratRepoistory.delete(contratManagedEntity);
+		l.info("contrat deleted ");
 
 	}
 
 	public void deleteAllContratJPQL() {
+		l.info("débuter la supression de tous les contarts ");
 		employeRepository.deleteAllContratJPQL();
+		l.info("suppression terminé de tous les contarts ");
 	}
 }
