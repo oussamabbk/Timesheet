@@ -22,34 +22,34 @@ import tn.esprit.spring.repository.TimesheetRepository;
 
 @Service
 public class TimesheetServiceImpl implements ITimesheetService {
-//	
-//	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
-//	
-//	
+	
+	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
+	
+	
+	@Autowired
+	MissionRepository missionRepository;
 //	@Autowired
-//	MissionRepository missionRepository;
-////	@Autowired
-////	DepartementRepository deptRepoistory;
-//	@Autowired
-//	TimesheetRepository timesheetRepository;
-//	@Autowired
-//	EmployeRepository employeRepository;
+//	DepartementRepository deptRepoistory;
+	@Autowired
+	TimesheetRepository timesheetRepository;
+	@Autowired
+	EmployeRepository employeRepository;
 //	
-//	public int ajouterMission(Mission mission) {
-//		
-//		
-//		try {
-//			missionRepository.save(mission);
-//			l.info("mission ajoutée:  "+ mission);
-//
-//			l.debug("Je vais lancer la divsion.");
-//
-//			}
-//			catch (Exception e) { l.error("Erreur dans ajouterMission() : " + e); 
-//			}
-//		
-//		return mission.getId();
-//	}
+	public int ajouterMission(Mission mission) {
+		
+		
+		try {
+			missionRepository.save(mission);
+			l.info("mission ajoutée:  "+ mission);
+
+			l.debug("Je vais lancer la divsion.");
+
+			}
+			catch (Exception e) { l.error("Erreur dans ajouterMission() : " + e); 
+			}
+		
+		return mission.getId();
+	}
     
 //	public void affecterMissionADepartement(int missionId, int depId) {
 //		Mission mission = missionRepository.findById(missionId).get();
