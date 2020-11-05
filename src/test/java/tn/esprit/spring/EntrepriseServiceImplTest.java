@@ -38,26 +38,26 @@ public class EntrepriseServiceImplTest {
 		//ES.ajouterEntreprise(new Entreprise("test1","raisonSocial"));}
 //
 //	
-//	 	@Test
-//	 public void testgetallEntreprise() throws ParseException {
-//			List<Entreprise> listentreprises=ES.getAll();
-//		//	assertEquals(5,listentreprises.size());
-//		
-//		}
+	 	@Test
+	 public void testgetallEntreprise() throws ParseException {
+			List<Entreprise> listentreprises=ES.getAll();
+		//	assertEquals(5,listentreprises.size());
+		
+		}
 //
 //	 	
 //	
-//	@Test
-//
-//	 public void getEntrepriseById() throws ParseException {
-//		try{
-//	    Entreprise entrepriseretrieved=ES.getEntrepriseById(14);
-//	    //assertThat(14, is(entrepriseretrieved.getId()));
-//		}catch(Exception e){
-//			
-//			l.info("entreprise id 14 not found");
-//		}
-//		}
+	@Test
+
+	 public void getEntrepriseById() throws ParseException {
+		try{
+	    Entreprise entrepriseretrieved=ES.getEntrepriseById(14);
+	    //assertThat(14, is(entrepriseretrieved.getId()));
+		}catch(Exception e){
+			
+			l.info("entreprise id 14 not found");
+		}
+		}
 		//Entreprise entrepriseretrieved= ES.getEntrepriseById(14);
 		
 //	@Test

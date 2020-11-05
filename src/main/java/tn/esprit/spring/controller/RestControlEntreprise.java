@@ -32,12 +32,12 @@ public class RestControlEntreprise {
 	// Ajouter Entreprise : http://localhost:8081/SpringMVC/servlet/ajouterEntreprise
 	//{"id":1,"name":"SSII Consulting","raisonSocial":"Cite El Ghazela"}
 
-//	@PostMapping("/ajouterEntreprise")
-//	@ResponseBody
-//	public int ajouterEntreprise(@RequestBody Entreprise ssiiConsulting) {
-//		ientrepriseservice.ajouterEntreprise(ssiiConsulting);
-//		return ssiiConsulting.getId();
-//	}
+	@PostMapping("/ajouterEntreprise")
+	@ResponseBody
+	public int ajouterEntreprise(@RequestBody Entreprise ssiiConsulting) {
+		ientrepriseservice.ajouterEntreprise2(ssiiConsulting);
+		return ssiiConsulting.getId();
+	}
 	
 //	// http://localhost:8081/SpringMVC/servlet/affecterDepartementAEntreprise/1/1
 //    @PutMapping(value = "/affecterDepartementAEntreprise/{iddept}/{identreprise}") 
@@ -45,13 +45,13 @@ public class RestControlEntreprise {
 //		ientrepriseservice.affecterDepartementAEntreprise(depId, entrepriseId);
 //	}
     
-    // http://localhost:8081/SpringMVC/servlet/deleteEntrepriseById/1
-    @DeleteMapping("/deleteEntrepriseById/{identreprise}") 
-	@ResponseBody 
-	public void deleteEntrepriseById(@PathVariable("identreprise")int entrepriseId)
-	{
-		ientrepriseservice.deleteEntrepriseById(entrepriseId);
-	}
+//    // http://localhost:8081/SpringMVC/servlet/deleteEntrepriseById/1
+//    @DeleteMapping("/deleteEntrepriseById/{identreprise}") 
+//	@ResponseBody 
+//	public void deleteEntrepriseById(@PathVariable("identreprise")int entrepriseId)
+//	{
+//		ientrepriseservice.deleteEntrepriseById(entrepriseId);
+//	}
     
     // http://localhost:8081/SpringMVC/servlet/getEntrepriseById/1
     @GetMapping(value = "getEntrepriseById/{identreprise}")

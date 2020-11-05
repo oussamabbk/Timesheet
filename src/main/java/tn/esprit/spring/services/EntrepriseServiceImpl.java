@@ -25,20 +25,20 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	//@Autowired
 	//DepartementRepository deptRepoistory;
 	
-	public int ajouterEntreprise(Entreprise entreprise) {
-		
-		try {
-			entrepriseRepoistory.save(entreprise);
-			l.info("entreprise ajoutée:  "+ entreprise);
-
-			l.debug("Je vais lancer la divsion.");
-
-			}
-			catch (Exception e) { l.error("Erreur dans ajouterEntreprise() : " + e); 
-			}
-		
-		return entreprise.getId();
-	}
+//	public int ajouterEntreprise(Entreprise entreprise) {
+//		
+//		try {
+//			entrepriseRepoistory.save(entreprise);
+//			l.info("entreprise ajoutée:  "+ entreprise);
+//
+//			l.debug("Je vais lancer la divsion.");
+//
+//			}
+//			catch (Exception e) { l.error("Erreur dans ajouterEntreprise() : " + e); 
+//			}
+//		
+//		return entreprise.getId();
+//	}
 	
 	
 	
@@ -83,38 +83,38 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 //		return depNames;
 //	}
 
-	@Transactional
-	public void deleteEntrepriseById(int entrepriseId) {
-		try {
-			l.info("Dans la  methode deleteEntrepriseById()");
-			l.debug("Je vais lancer la suppression d'une entreprise .");
-			Entreprise ent = new Entreprise(null, null);
-			entrepriseRepoistory.delete(entrepriseRepoistory.findById(entrepriseId).orElse(ent));
-			l.debug("Je viens de finir la supp .");
-			l.info("Out deleteEntrepriseById() without errors avec.");
-			}
-			catch (Exception e) 
-			{ 
-			l.error("Erreur dans deleteEntrepriseById() : " + e); }
-			l.info("fin methode deleteEntrepriseById() .");
-			
-	}
+//	@Transactional
+//	public void deleteEntrepriseById(int entrepriseId) {
+//		try {
+//			l.info("Dans la  methode deleteEntrepriseById()");
+//			l.debug("Je vais lancer la suppression d'une entreprise .");
+//			Entreprise ent = new Entreprise(null, null);
+//			entrepriseRepoistory.delete(entrepriseRepoistory.findById(entrepriseId).orElse(ent));
+//			l.debug("Je viens de finir la supp .");
+//			l.info("Out deleteEntrepriseById() without errors avec.");
+//			}
+//			catch (Exception e) 
+//			{ 
+//			l.error("Erreur dans deleteEntrepriseById() : " + e); }
+//			l.info("fin methode deleteEntrepriseById() .");
+//			
+//	}
 	
-	@Transactional
-	public void deleteAll() {
-		try {
-			l.info("Dans la  methode deleteAll()");
-			l.debug("Je vais lancer la suppression de toutes les entreprises .");
-			entrepriseRepoistory.deleteAll();
-			l.debug("Je viens de finir la supp .");
-			l.info("Out deleteAll() without errors avec.");
-			}
-			catch (Exception e) 
-			{ 
-			l.error("Erreur dans deleteAll() : " + e); }
-			l.info("fin methode deleteAll() .");
-			
-	}
+//	@Transactional
+//	public void deleteAll() {
+//		try {
+//			l.info("Dans la  methode deleteAll()");
+//			l.debug("Je vais lancer la suppression de toutes les entreprises .");
+//			entrepriseRepoistory.deleteAll();
+//			l.debug("Je viens de finir la supp .");
+//			l.info("Out deleteAll() without errors avec.");
+//			}
+//			catch (Exception e) 
+//			{ 
+//			l.error("Erreur dans deleteAll() : " + e); }
+//			l.info("fin methode deleteAll() .");
+//			
+//	}
 
 
 
