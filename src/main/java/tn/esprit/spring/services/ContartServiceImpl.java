@@ -1,5 +1,6 @@
 package tn.esprit.spring.services;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +12,22 @@ import tn.esprit.spring.repository.EmployeRepository;
 @Service
 public class ContartServiceImpl implements IContratService {
 
+	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
+
 	@Autowired
 	EmployeRepository employeRepository;
 	@Autowired
 	ContratRepository contratRepoistory;
 
 	public int ajouterContrat(Contrat contrat) {
-		contratRepoistory.save(contrat);
+		try {
+			l.info("Dans la  methode ajouterEntreprise()");
+			l.debug("Je vais lancer l'ajout d'une nouvelle entreprise .");
+			contratRepoistory.save(contrat);
+		} catch (Exception e) {
+			l.error("Erreur dans ajouterEntreprise() : " + e);
+		}
+		l.info("fin methode ajouterEntreprise() .");
 		return contrat.getReference();
 	}
 

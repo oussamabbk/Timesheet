@@ -28,7 +28,7 @@ public class ContratServiceImplTest {
 	public void testAjoutContrat() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date d = dateFormat.parse("2020-11-05");
-		
+
 		Contrat c = new Contrat(d, "CDI", 1500);
 		contratservice.ajouterContrat(c);
 	}
