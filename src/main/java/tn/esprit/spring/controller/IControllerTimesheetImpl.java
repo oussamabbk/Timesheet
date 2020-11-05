@@ -14,27 +14,27 @@ import tn.esprit.spring.services.ITimesheetService;
 
 @Controller
 public class IControllerTimesheetImpl {
-
-	@Autowired
-	IEmployeService iemployeservice;
-	@Autowired
-	IEntrepriseService ientrepriseservice;
-	@Autowired
-	ITimesheetService itimesheetservice;
-
-	public int ajouterMission(Mission mission) {
-		itimesheetservice.ajouterMission(mission);
-		return mission.getId();
-	}
+//
+//	@Autowired
+//	IEmployeService iemployeservice;
+//	@Autowired
+//	IEntrepriseService ientrepriseservice;
+//	@Autowired
+//	ITimesheetService itimesheetservice;
+//
+//	public int ajouterMission(Mission mission) {
+//		itimesheetservice.ajouterMission(mission);
+//		return mission.getId();
+//	}
 
 //	public void affecterMissionADepartement(int missionId, int depId) {
 //		itimesheetservice.affecterMissionADepartement(missionId, depId);
 //
 //	}
-	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
-		itimesheetservice.ajouterTimesheet(missionId, employeId, dateDebut, dateFin);
-
-	}
+//	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
+//		itimesheetservice.ajouterTimesheet(missionId, employeId, dateDebut, dateFin);
+//
+//	}
 
 	
 //	public void validerTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin, int validateurId) {

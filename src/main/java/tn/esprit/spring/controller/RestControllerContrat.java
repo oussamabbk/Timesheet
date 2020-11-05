@@ -17,13 +17,13 @@ import tn.esprit.spring.services.ITimesheetService;
 @RestController
 public class RestControllerContrat {
 
-	@Autowired
-	IEmployeService iemployeservice;
-	
-	@Autowired
-	ITimesheetService itimesheetservice;
-	@Autowired
-	IContratService contratservice;
+//	@Autowired
+//	IEmployeService iemployeservice;
+//	
+//	@Autowired
+//	ITimesheetService itimesheetservice;
+//	@Autowired
+//	IContratService contratservice;
 
 	// http://localhost:8081/SpringMVC/servlet/ajouterContrat
 	// {"reference":6,"dateDebut":"2020-03-01","salaire":2000,"typeContrat":"CDD"}
@@ -35,24 +35,24 @@ public class RestControllerContrat {
 //	}
 
 	// http://localhost:8081/SpringMVC/servlet/affecterContratAEmploye/6/1
-	@PutMapping(value = "/affecterContratAEmploye/{idcontrat}/{idemp}")
-	public void affecterContratAEmploye(@PathVariable("idcontrat") int contratId,
-			@PathVariable("idemp") int employeId) {
-		contratservice.affecterContratAEmploye(contratId, employeId);
-	}
+//	@PutMapping(value = "/affecterContratAEmploye/{idcontrat}/{idemp}")
+//	public void affecterContratAEmploye(@PathVariable("idcontrat") int contratId,
+//			@PathVariable("idemp") int employeId) {
+//		contratservice.affecterContratAEmploye(contratId, employeId);
+//	}
 
-	// URL : http://localhost:8081/SpringMVC/servlet/deleteContratById/2
-	@DeleteMapping("/deleteContratById/{idcontrat}")
-	@ResponseBody
-	public void deleteContratById(@PathVariable("idcontrat") int contratId) {
-		contratservice.deleteContratById(contratId);
-	}
+//	// URL : http://localhost:8081/SpringMVC/servlet/deleteContratById/2
+//	@DeleteMapping("/deleteContratById/{idcontrat}")
+//	@ResponseBody
+//	public void deleteContratById(@PathVariable("idcontrat") int contratId) {
+//		contratservice.deleteContratById(contratId);
+//	}
 
 	// URL : http://localhost:8081/SpringMVC/servlet/deleteAllContratJPQL
-	@DeleteMapping("/deleteAllContratJPQL")
-	@ResponseBody
-	public void deleteAllContratJPQL() {
-		contratservice.deleteAllContratJPQL();
-
-	}
+//	@DeleteMapping("/deleteAllContratJPQL")
+//	@ResponseBody
+//	public void deleteAllContratJPQL() {
+//		contratservice.deleteAllContratJPQL();
+//
+//	}
 }

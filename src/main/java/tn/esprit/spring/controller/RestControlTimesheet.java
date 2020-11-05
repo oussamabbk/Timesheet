@@ -21,12 +21,12 @@ import tn.esprit.spring.services.ITimesheetService;
 @RestController
 public class RestControlTimesheet {
 
-	@Autowired
-	IEmployeService iemployeservice;
-	@Autowired
-	IEntrepriseService ientrepriseservice;
-	@Autowired
-	ITimesheetService itimesheetservice;
+//	@Autowired
+//	IEmployeService iemployeservice;
+//	@Autowired
+//	IEntrepriseService ientrepriseservice;
+//	@Autowired
+//	ITimesheetService itimesheetservice;
 //	
 //	// http://localhost:8081/SpringMVC/servlet/ajouterMission
 //	//{"id":4,"name":"mamission", "description":"c ma mission"}
@@ -47,12 +47,12 @@ public class RestControlTimesheet {
 	// http://localhost:8081/SpringMVC/servlet/ajouterTimesheet
     //{"missionId":1,"employeId":2,"dateDebut":"2020-03-01","dateFin":"2021-03-01"}
 	
-	@PostMapping("/ajouterTimesheet/idmission/idemp/dated/datef")
-	@ResponseBody
-	public void ajouterTimesheet(@PathVariable("idmission") int missionId, @PathVariable("idemp") int employeId, @PathVariable("dated") Date dateDebut,@PathVariable("datef") Date dateFin) {
-		itimesheetservice.ajouterTimesheet(missionId, employeId, dateDebut, dateFin);
-
-	}
+//	@PostMapping("/ajouterTimesheet/idmission/idemp/dated/datef")
+//	@ResponseBody
+//	public void ajouterTimesheet(@PathVariable("idmission") int missionId, @PathVariable("idemp") int employeId, @PathVariable("dated") Date dateDebut,@PathVariable("datef") Date dateFin) {
+//		itimesheetservice.ajouterTimesheet(missionId, employeId, dateDebut, dateFin);
+//
+//	}
 
 //	// http://localhost:8081/SpringMVC/servlet/affecterMissionADepartement/4/4
 //	@PutMapping(value = "/validerTimesheet/{idmission}/{iddept}") 

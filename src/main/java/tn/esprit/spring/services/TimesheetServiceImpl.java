@@ -22,34 +22,34 @@ import tn.esprit.spring.repository.TimesheetRepository;
 
 @Service
 public class TimesheetServiceImpl implements ITimesheetService {
-	
-	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
-	
-	
-	@Autowired
-	MissionRepository missionRepository;
+//	
+//	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
+//	
+//	
 //	@Autowired
-//	DepartementRepository deptRepoistory;
-	@Autowired
-	TimesheetRepository timesheetRepository;
-	@Autowired
-	EmployeRepository employeRepository;
-	
-	public int ajouterMission(Mission mission) {
-		
-		
-		try {
-			missionRepository.save(mission);
-			l.info("mission ajoutée:  "+ mission);
-
-			l.debug("Je vais lancer la divsion.");
-
-			}
-			catch (Exception e) { l.error("Erreur dans ajouterMission() : " + e); 
-			}
-		
-		return mission.getId();
-	}
+//	MissionRepository missionRepository;
+////	@Autowired
+////	DepartementRepository deptRepoistory;
+//	@Autowired
+//	TimesheetRepository timesheetRepository;
+//	@Autowired
+//	EmployeRepository employeRepository;
+//	
+//	public int ajouterMission(Mission mission) {
+//		
+//		
+//		try {
+//			missionRepository.save(mission);
+//			l.info("mission ajoutée:  "+ mission);
+//
+//			l.debug("Je vais lancer la divsion.");
+//
+//			}
+//			catch (Exception e) { l.error("Erreur dans ajouterMission() : " + e); 
+//			}
+//		
+//		return mission.getId();
+//	}
     
 //	public void affecterMissionADepartement(int missionId, int depId) {
 //		Mission mission = missionRepository.findById(missionId).get();
@@ -58,20 +58,20 @@ public class TimesheetServiceImpl implements ITimesheetService {
 //		missionRepository.save(mission);
 //		
 //	}
-
-	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
-		TimesheetPK timesheetPK = new TimesheetPK();
-		timesheetPK.setDateDebut(dateDebut);
-		timesheetPK.setDateFin(dateFin);
-		timesheetPK.setIdEmploye(employeId);
-		timesheetPK.setIdMission(missionId);
-		
-		Timesheet timesheet = new Timesheet();
-		timesheet.setTimesheetPK(timesheetPK);
-		timesheet.setValide(false); //par defaut non valide
-		timesheetRepository.save(timesheet);
-		
-	}
+//
+//	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
+//		TimesheetPK timesheetPK = new TimesheetPK();
+//		timesheetPK.setDateDebut(dateDebut);
+//		timesheetPK.setDateFin(dateFin);
+//		timesheetPK.setIdEmploye(employeId);
+//		timesheetPK.setIdMission(missionId);
+//		
+//		Timesheet timesheet = new Timesheet();
+//		timesheet.setTimesheetPK(timesheetPK);
+//		timesheet.setValide(false); //par defaut non valide
+//		timesheetRepository.save(timesheet);
+//		
+//	}
 
 //	@Override
 //	public void validerTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin, int validateurId) {
