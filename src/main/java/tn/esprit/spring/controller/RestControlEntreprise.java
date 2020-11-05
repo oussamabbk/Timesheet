@@ -32,12 +32,12 @@ public class RestControlEntreprise {
 	// Ajouter Entreprise : http://localhost:8081/SpringMVC/servlet/ajouterEntreprise
 	//{"id":1,"name":"SSII Consulting","raisonSocial":"Cite El Ghazela"}
 
-	@PostMapping("/ajouterEntreprise")
-	@ResponseBody
-	public int ajouterEntreprise(@RequestBody Entreprise ssiiConsulting) {
-		ientrepriseservice.ajouterEntreprise2(ssiiConsulting);
-		return ssiiConsulting.getId();
-	}
+//	@PostMapping("/ajouterEntreprise")
+//	@ResponseBody
+//	public int ajouterEntreprise(@RequestBody Entreprise ssiiConsulting) {
+//		ientrepriseservice.ajouterEntreprise2(ssiiConsulting);
+//		return ssiiConsulting.getId();
+//	}
 	
 //	// http://localhost:8081/SpringMVC/servlet/affecterDepartementAEntreprise/1/1
 //    @PutMapping(value = "/affecterDepartementAEntreprise/{iddept}/{identreprise}") 

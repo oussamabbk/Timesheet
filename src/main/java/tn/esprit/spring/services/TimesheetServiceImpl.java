@@ -51,13 +51,13 @@ public class TimesheetServiceImpl implements ITimesheetService {
 		return mission.getId();
 	}
     
-	public void affecterMissionADepartement(int missionId, int depId) {
-		Mission mission = missionRepository.findById(missionId).get();
-//		Departement dep = deptRepoistory.findById(depId).get();
-//		mission.setDepartement(dep);
-		missionRepository.save(mission);
-		
-	}
+//	public void affecterMissionADepartement(int missionId, int depId) {
+//		Mission mission = missionRepository.findById(missionId).get();
+////		Departement dep = deptRepoistory.findById(depId).get();
+////		mission.setDepartement(dep);
+//		missionRepository.save(mission);
+//		
+//	}
 
 	public void ajouterTimesheet(int missionId, int employeId, Date dateDebut, Date dateFin) {
 		TimesheetPK timesheetPK = new TimesheetPK();
