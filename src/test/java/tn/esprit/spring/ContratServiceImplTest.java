@@ -32,4 +32,17 @@ public class ContratServiceImplTest {
 		Contrat c = new Contrat(d, "CDI", 1500);
 		contratservice.ajouterContrat(c);
 	}
+	
+//	@Test
+//	 public void testdeleteAllContrat() throws ParseException {
+//		contratservice.deleteAllContratJPQL();
+//		List<Contrat> listentreprises=contratservice.getAll();
+//			assertEquals(0,listentreprises.size());
+//		}
+	
+//	@Test
+//	
+//	  public void deleteContratById() throws ParseException {
+//		contratservice.deleteContratById(1);
+//					}
 }
